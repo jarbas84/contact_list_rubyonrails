@@ -9,6 +9,3 @@
   },
   "version": "0.1.0"
 }
-"dependencies": {
-    "webpacker": "~> 0.1"
-  }
