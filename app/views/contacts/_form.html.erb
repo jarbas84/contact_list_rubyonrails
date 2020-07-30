@@ -1,0 +1,16 @@
+<%= form_with(model: contact, local: true) do |form| %>
+  
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, required:'requiured',placeholder: 'Digite o Nome do Contato', autofocus: 'autofocus', class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, required:'required', placeholder: 'Digite o Telefone de Contato', class:'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Criar Novo Contato', class: 'btn btn-success' %>
+  </div>
+<% end %>

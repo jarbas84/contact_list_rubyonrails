@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-xs-12 text-center"><h1>Contacts</h1></div>
+  
+  <div class="col-md-8 col-md-offset-2 col-xs-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th colspan="2">
+            <%= link_to 'Novo Contato', new_contact_path, class:'btn btn-success' %>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+          <% if @contacts.empty? %>
+            <tr>
+              <td colspan="4" class="text-center"><h3>Sem Contatos Cadastrados</h3>
+                <%= link_to 'Clique Aqui',  new_contact_path, class: 'btn btn-success' %> Para Cadastrar Um Contato
+              </td>
+            </tr>
+          <% end %>
+  </tbody>
+      <tbody>
+          <% @contacts.each do |contact| %>
+            <tr>
+              <td><%= contact.name %></td>
+              <td><%= contact.phone %></td>
+              <td><%= link_to 'Editar', edit_contact_path(contact), class:'btn btn-warning' %></td>
+              <td><%= link_to 'Excluir', "contact/#{contact.id}", class:'btn btn-danger', confirm: 'Tem Certeza?' %>
+                
+              </td>
+            </tr>
+          <% end %>
+  </tbody>
+     
+     </table>
+    
+  </div>
+
+</div>
